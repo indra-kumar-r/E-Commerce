@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const ProductList = () => {
   let [products, setProducts] = useState([]);
-  let [selectedProduct, setSelectedProduct] = useState(null);
+  let [selectedProduct, setSelectedProduct] = useState("");
 
   useEffect(() => {
     fetch(`http://localhost:5000/product`)
@@ -17,10 +17,6 @@ const ProductList = () => {
         console.log(error);
       });
   }, []);
-
-  const handleProductClick = (product) => {
-    setSelectedProduct(product);
-  };
 
   return (
     <Main>
@@ -72,7 +68,10 @@ const ProductList = () => {
             </>
           )}
           <div className="d-flex justify-content-center">
-            <Link to={"/"} className="btn btn-dark fw-bold">
+            <Link
+              to={`/edit/${selectedProduct._id}`}
+              className="btn btn-dark fw-bold"
+            >
               EDIT
             </Link>
           </div>

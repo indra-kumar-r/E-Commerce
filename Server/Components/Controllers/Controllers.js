@@ -30,9 +30,27 @@ module.exports.g_product = async (req, res) => {
   }
 };
 
+module.exports.g_singleproduct = async (req, res) => {
+  const { id } = req.params;
+  try {
+    let data = await Product.findById({ _id: id });
+    res.status(200).json(data);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+};
+
 module.exports.u_product = async (req, res) => {};
 
-module.exports.d_product = async (req, res) => {};
+module.exports.d_product = async (req, res) => {
+  const { id } = req.params;
+  try {
+    let data = await Product.deleteOne({ _id: id });
+    res.status(200).json({ data: data, message: "Successfully deleted" });
+  } catch (error) {
+    res.status(400).json(error);
+  }
+};
 
 // Category
 

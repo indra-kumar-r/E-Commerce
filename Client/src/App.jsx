@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import EditProduct from "./pages/AdminPages/EditProduct";
 
 export default function App() {
   return (
@@ -25,9 +26,10 @@ export default function App() {
           <Route path={"product/:productId"} element={<Product />} />
           <Route path={"about"} element={<About />} />
           <Route path={"payment"} element={<Payment />} />
-          <Route path={"notfound"} element={<NotFound />} />
+          <Route path={"*"} element={<NotFound />} />
           <Route path={"about"} element={<About />} />
           <Route path={"admin"} element={<Admin />} />
+          <Route path={"/edit/:productId"} element={<EditProduct />} />
           <Route path={"login"} element={<Login />} />
           <Route path={"register"} element={<Register />} />
           {/* <Route path={""} element={ } /> */}

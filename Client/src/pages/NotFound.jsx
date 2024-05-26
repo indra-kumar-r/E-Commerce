@@ -3,11 +3,11 @@ import notFoundError from "../assets/images/404.gif";
 import { useEffect } from "react";
 
 const NotFound = () => {
-  useEffect(() => {
-    setTimeout(() => {
-      location.assign("/");
-    }, 3000);
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     location.assign("/");
+  //   }, 3000);
+  // }, []);
 
   return (
     <Main>
