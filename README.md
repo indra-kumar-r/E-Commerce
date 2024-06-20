@@ -1,2 +1,2 @@
-# E-Commerce_Nuts
+# E-Commerce
 Mern stack application.
